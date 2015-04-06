@@ -7,17 +7,12 @@ module.exports =
     {
       title: "Messages"
       id: "index"
-      location: "example#messages" # Supersonic module#view type navigation
+      location: "message#index"
     }
     {
       title: "Settings"
       id: "settings"
       location: "example#settings"
-    }
-    {
-      title: "API"
-      id: "api"
-      location: "message#index"
     }
   ]
 

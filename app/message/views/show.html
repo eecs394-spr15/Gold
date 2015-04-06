@@ -8,16 +8,12 @@
   <div class="padding">
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-      <h2 ng-bind="message['_id']"></h2>
-      
-      
+      <!--<h2 ng-bind="message['_id']"></h2>-->
       
        <p>text: <span ng-bind="message['text']"></span></p> 
       
        <p>date: <span ng-bind="message['date']"></span></p> 
       
-
-
       <super-modal-show location="message#edit?id={{ message.id }}">
         <button class="button button-block button-positive">
           Edit
@@ -27,6 +23,7 @@
       <button ng-click="remove(message.id)" class="button button-block button-negative">
         Remove
       </button>
+
     </div>
   </div>
 </div>

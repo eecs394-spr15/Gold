@@ -14,6 +14,11 @@ module.exports =
       id: "settings"
       location: "example#settings"
     }
+    {
+      title: "API"
+      id: "api"
+      location: "message#index"
+    }
   ]
 
   # rootView:

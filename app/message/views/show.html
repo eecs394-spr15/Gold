@@ -8,8 +8,10 @@
   <div class="padding">
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-      <!--<h2 ng-bind="message['_id']"></h2>-->
+      <span ng-bind="message['_id']"></span>
       
+       <p>test: {{2+2}}</p> 
+
        <p>text: <span ng-bind="message['text']"></span></p> 
       
        <p>date: <span ng-bind="message['date']"></span></p> 
@@ -21,7 +23,7 @@
       </super-modal-show>
 
       <button ng-click="remove(message.id)" class="button button-block button-negative">
-        Remove
+        Delete
       </button>
 
     </div>

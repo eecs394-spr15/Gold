@@ -10,9 +10,9 @@
     <div ng-hide="showSpinner">
       <!--<h2 ng-bind="message['_id']"></h2>-->
       
-       <p>text: <span ng-bind="message['text']"></span></p> 
+       <p>text: <span ng-bind="{{$scope.message['text']}}"></span></p> 
       
-       <p>date: <span ng-bind="message['date']"></span></p> 
+       <p>date: <span ng-bind="{{$scope.message['date']}}"></span></p> 
       
       <super-modal-show location="message#edit?id={{ message.id }}">
         <button class="button button-block button-positive">

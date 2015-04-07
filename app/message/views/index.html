@@ -8,17 +8,17 @@
   <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
   <div ng-hide="showSpinner">
 
-      <super-navigate location="message#show" data-params-id="{{ message.id }}" ng-repeat="message in messages">
+      <super-navigate location="message#show" data-params-id="{{ message.id }}" ng-repeat="message in messages | orderBy: '-date'">
       <div class="card" ng-hide="messages.length == 0">
         <div class="item item-text-wrap">
-          <h4 class="message-date"><span ng-bind="message['date']"></span></h4>
-          <span ng-bind="message['text']"></span>
+          <h4 class="message-date">{{message['date'] | date:'EEEE MMM dd, yyyy'}}</h4>
+          {{message['text']}}
           <!--<i class="icon super-ios7-arrow-right"></i>-->
         </div>
     </div>
       </super-navigate>
     <h4 ng-show="messages.length == 0" class="assertive padding">
-      No messages found. Create one?
+      No messages found. Text XXX-XXX-XXXX to get started!
     </h4>
 
     <!--<super-modal-show location="message#new">

@@ -1,8 +1,8 @@
 angular
   .module('message')
   .controller("ShowController", function ($scope, Message, supersonic) {
-    $scope.message = null;
-    $scope.showSpinner = true;
+    $scope.message = Message;
+    $scope.showSpinner = false;
     $scope.dataId = undefined;
 
     var _refreshViewData = function () {
@@ -21,7 +21,8 @@ angular
     });
 
     supersonic.ui.views.current.params.onValue( function (values) {
-      $scope.dataId = values.id;
+      $scope.dataId = JSON.parse(values.id);
+
       _refreshViewData();
     });
 

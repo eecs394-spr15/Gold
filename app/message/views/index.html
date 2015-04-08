@@ -8,7 +8,7 @@
   <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
   <div ng-hide="showSpinner">
 
-      <super-navigate location="message#show" data-params-id="{{ message.id }}" ng-repeat="message in messages | orderBy: '-date'">
+      <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in messages | orderBy: '-date'">
       <div class="card" ng-hide="messages.length == 0">
         <div class="item item-text-wrap">
           <h4 class="message-date">{{message['date'] | date:'EEEE MMM dd, yyyy'}}</h4>

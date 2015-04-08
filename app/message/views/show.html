@@ -8,13 +8,14 @@
   <div class="padding">
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-      <span ng-bind="message['_id']"></span>
-      
-       <p>test: {{2+2}}</p> 
+      <span ng-bind="message['id']"></span>
 
-       <p>text: <span ng-bind="message['text']"></span></p> 
-      
-       <p>date: <span ng-bind="message['date']"></span></p> 
+      <div class="card">
+        <div class="item item-text-wrap">
+          <h4 class="message-date">{{dataId['date'] | date:'EEEE MMM dd, yyyy'}} </h4>
+          {{dataId['text']}}
+        </div>
+      </div>
       
       <super-modal-show location="message#edit?id={{ message.id }}">
         <button class="button button-block button-positive">

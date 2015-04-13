@@ -16,10 +16,11 @@
     </div>
 
       <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in messages | orderBy: '-date'">
-      <div class="card" ng-hide="messages.length == 0">
+      <div ng-if="message['phone'] == phoneNumber" class="card" ng-hide="messages.length == 0">
         <div class="item item-text-wrap">
           <h4 class="message-date">{{message['date'] | date:'EEEE MMM dd, yyyy'}}</h4>
           {{message['text']}}
+          {{message['phone']}}
         </div>
     </div>
       </super-navigate>

@@ -1,0 +1,28 @@
+<super-navbar>
+  <super-navbar-title>
+    Welcome
+  </super-navbar-title>
+</super-navbar>
+
+<div class="padding">
+
+  <p>Please enter your phone number below to get started.</p>
+
+<div>
+ <form ng-submit="submit()" ng-controller="LaunchController">
+  <label class="item item-input">
+    <input type="text" ng-model="text" name="text" placeholder="Phone number (xxxyyyxxxx)">
+  </label>
+  <br>
+  <input onclick="supersonic.ui.initialView.dismiss()" class="button button-block button-balanced" type="submit" id="submit" value="Submit" />
+  <!--<pre>list={{list}}</pre>-->
+</form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>

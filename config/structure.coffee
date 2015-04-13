@@ -16,8 +16,8 @@ module.exports =
     }
   ]
 
-  # rootView:
-  #   location: "example#getting-started"
+   #rootView:
+   #  location: "example#launch"
 
   preloads: [
 
@@ -31,6 +31,6 @@ module.exports =
   #   options:
   #     animation: "swingingDoor"
   #
-  # initialView:
-  #   id: "initialView"
-  #   location: "example#initial-view"
+  initialView:
+    id: "initialView"
+    location: "example#launch"

@@ -8,6 +8,13 @@
   <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
   <div ng-hide="showSpinner">
 
+   <div class="card">
+        <div class="item item-text-wrap">
+          <h1>Welcome to Koala!</h1>
+          <p>Koala is a private place for you to log your daily thoughts and life highlights. Simply text your entries to 612-255-1628 daily, and we'll store them all safely here for you.</p>
+        </div>
+    </div>
+
       <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in messages | orderBy: '-date'">
       <div class="card" ng-hide="messages.length == 0">
         <div class="item item-text-wrap">

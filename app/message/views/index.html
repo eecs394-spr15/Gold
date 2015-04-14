@@ -14,9 +14,10 @@
           <p>Koala is a private place for you to log your daily thoughts and life highlights. Simply text your entries to 612-255-1628 daily, and we'll store them all safely here for you.</p>
         </div>
     </div>
+      <!--<p>List={{myMessages}}</p>-->
 
-      <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in messages | orderBy: '-date'">
-      <div ng-if="message['phone'] == phoneNumber" class="card" ng-hide="messages.length == 0">
+      <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in myMessages | orderBy: '-date'">
+      <div class="card" ng-hide="messages.length == 0">
         <div class="item item-text-wrap">
           <h4 class="message-date">{{message['date'] | date:'EEEE MMM dd, yyyy'}}</h4>
           {{message['text']}}

@@ -11,9 +11,9 @@ angular
           $scope.messages = messages;
           $scope.showSpinner = false;
            for(var i=0;i<messages.length;i++){
-+            if($scope.messages[i]['phone']===$scope.phoneNumber)
-+               $scope.myMessages.push($scope.messages[i]);
-+          }
+            if($scope.messages[i]['phone']===$scope.phoneNumber)
+               $scope.myMessages.push($scope.messages[i]);
+          }
         });
     });
   });

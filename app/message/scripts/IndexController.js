@@ -11,7 +11,8 @@ angular
       return  (element.date.match($scope.keyword) ? true : false)
       //||      (element.phone.match($scope.keyword) ? true : false)
       // Removing this phone search functionality. A user's feed should already consist of only their phone numbers.
-      ||      (element.text.toLowerCase().match($scope.keyword.toLowerCase()) ? true : false);
+      ||      (element.text.toLowerCase().match($scope.keyword.toLowerCase()) ? true : false)
+      ||      (parseInt(element.rating).match(parseInt($scope.keyword)) ? true : false);
     };
 
     Message.all().whenChanged( function (messages) {

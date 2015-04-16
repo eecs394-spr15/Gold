@@ -27,8 +27,8 @@
       <div class="card" ng-hide="myMessages.length == 0">
         <div class="item item-text-wrap">
           <h4 class="message-date">{{message['date'] | date:'EEEE MMM dd, yyyy'}}</h4>
+          <span class="rating"><h4>Rating: {{message['rating']}}/5</h4></span><br>
           {{message['text']}}
-          {{message['phone']}}
           <!--Leave this above line in for debugging purposes only-->
         </div>
     </div>

@@ -5,6 +5,13 @@ angular
     $scope.showSpinner = true;
     $scope.myMessages = [];
     $scope.phoneNumber = localStorage.getItem("user-phone");
+    $scope.keyword = "";
+
+    $scope.filterFunction = function(element) {
+      return  (element.date.match($scope.keyword) ? true : false)
+      ||      (element.phone.match($scope.keyword) ? true : false)
+      ||      (element.text.match($scope.keyword) ? true : false);
+    };
 
     Message.all().whenChanged( function (messages) {
         $scope.$apply( function () {

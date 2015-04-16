@@ -17,6 +17,7 @@ angular
         $scope.$apply( function () {
           $scope.messages = messages;
           $scope.showSpinner = false;
+          $scope.myMessages =[];
            for(var i=0;i<messages.length;i++){
             if($scope.messages[i]['phone']===$scope.phoneNumber)
                $scope.myMessages.push($scope.messages[i]);

@@ -10,12 +10,19 @@
     <div ng-hide="showSpinner">
       <span ng-bind="message['id']"></span>
 
-      <div class="card">
         <div class="item item-text-wrap">
-          <h4 class="message-date">{{dataId['date'] | date:'EEEE MMM dd, yyyy'}} </h4>
+          <h4 class="message-date">
+            {{dataId['date'] | date:'EEEE MMM dd, yyyy'}} 
+            <img ng-src= "{{dataId['rating']>4 ?fullHeartURL:emptyHeartURL}}" ng-class="{'grayscale':dataId['rating']<3}"/> <!-- "http://i58.tinypic.com/2akg4mv.png" empty heart-->
+            <img ng-src= "{{dataId['rating']>3 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':dataId['rating']<3}")/> <!-- "http://i57.tinypic.com/23vyzk5.png" half heart-->
+            <img ng-src= "{{dataId['rating']>2 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':dataId['rating']<3}")/> <!-- "http://i60.tinypic.com/10crg5k.png" full heart-->
+            <img ng-src= "{{dataId['rating']>1 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':dataId['rating']<3}")/>
+            <img ng-src= "{{dataId['rating']>0 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':dataId['rating']<3}")/></h4>
+
+          <span class="rating"><h4>Rating: {{dataId['rating']}}/5</h4></span><br>
           {{dataId['text']}}
+          <!--Leave this above line in for debugging purposes only-->
         </div>
-      </div>
       
       <super-modal-show location="message#edit?id={{ message.id }}">
         <button class="button button-block button-positive">

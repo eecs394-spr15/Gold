@@ -5,6 +5,10 @@ angular
     $scope.showSpinner = false;
     $scope.dataId = undefined;
 
+    $scope.fullHeartURL = "http://i60.tinypic.com/10crg5k.png";
+    $scope.halfHeartURL = "http://i57.tinypic.com/23vyzk5.png";
+    $scope.emptyHeartURL ="http://i58.tinypic.com/2akg4mv.png";
+
     var _refreshViewData = function () {
       Message.find($scope.dataId).then( function (message) {
         $scope.$apply( function () {

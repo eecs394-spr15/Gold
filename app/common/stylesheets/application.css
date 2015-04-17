@@ -10,8 +10,70 @@
 
 .message-date {
 	text-align: left;
+	display: inline;
 }
 
 .save-time {
 	margin: 25px;
 }
+
+.rating {
+	text-align: right;
+}
+
+.rating-upper-bound{
+	margin-top: -2px;
+	height: 35px;
+}
+.rating-lower-bound {
+	margin-top: -2px;
+	height: 35px;
+}
+
+/*used for heart images*/
+img{
+	width:15px;
+	height: 11px;
+	float: right;
+	margin-top: 6px;
+	vertical-align: text-bottom;
+
+}
+
+/*below are filters used for image manipulation.*/
+.saturate {-webkit-filter: saturate(3);}
+.grayscale {-webkit-filter:  opacity(30%) hue-rotate(200deg);;}
+.contrast {-webkit-filter: contrast(160%);}
+.brightness {-webkit-filter: brightness(0.25);}
+.blur {-webkit-filter: blur(3px);}
+.invert {-webkit-filter: invert(100%);}
+.sepia {-webkit-filter: sepia(100%);}
+.huerotate {-webkit-filter: hue-rotate(180deg);}
+.rss.opacity {-webkit-filter: opacity(50%);}
+
+.rating-slide-bar{
+	width:30px;
+	height: 25px;
+}
+
+.search-button-div{
+	margin-left: 15px;
+}
+.search-button{
+	margin-top:-10px;
+	margin-bottom:-15px;
+}
+
+.label-button1{
+	margin-left: 5px;
+	margin-top:0px;
+	margin-bottom:-10px;
+}
+.label-button2{
+	margin-left: 5px;
+	margin-top:-15px;
+	margin-bottom:-10px;
+}
+
+
+

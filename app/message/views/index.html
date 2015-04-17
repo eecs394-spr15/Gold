@@ -8,12 +8,40 @@
   <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
   <div ng-hide="showSpinner">
 
-  <div class="bar bar-header item-input-inset">
-      <label class="item-input-wrapper">
-        <i class="icon super-ios7-search placeholder-icon"></i>
-        <input type="search" placeholder="Search" ng-model="keyword">
-      </label>
-  </div>
+  <div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon super-search placeholder-icon"></i>
+      <input type="search" placeholder="Search" ng-model="keyword" class="searchbar">
+
+  </label>
+</div>
+
+<div class= "search-button-div">
+
+  <button class="button button-clear button-positive search-button" href="#" ng-model="collapsed" ng-click="collapsed=!collapsed">
+    Search Mood
+  </button>
+  <button class="button button-clear button-calm search-button">
+    Search Date
+  </button>
+  <button class="button button-clear button-stable search-button">
+    Search Keyword
+  </button>
+</div>
+    <button class="button button-clear button-stable label-button1" ng-show="collapsed">Set mood lower bound: {{searchByMoodRatingLowerBound}}</button>
+    <div class="card range rating-upper-bound" ng-show="collapsed">
+        <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
+        <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingLowerBound">
+        <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
+    </div>
+
+    <button class="button button-clear button-stable label-button2" ng-show="collapsed">Set mood upper bound: {{searchByMoodRatingUpperBound}}</button>
+    <div class="card range rating-lower-bound" ng-show="collapsed">
+        <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
+        <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingUpperBound">
+        <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
+    </div>
+
    <div class="card">
         <div class="item item-text-wrap">
           <h1>Welcome to Koala!</h1>
@@ -21,14 +49,23 @@
         </div>
     </div>
 
-      <!--<p>List={{myMessages}}</p>-->
-
       <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in myMessages | orderBy: '-date'|filter: filterFunction">
       <div class="card" ng-hide="myMessages.length == 0">
         <div class="item item-text-wrap">
-          <h4 class="message-date">{{message['date'] | date:'EEEE MMM dd, yyyy'}}</h4>
+
+
+          <h4 class="message-date">                           <!-- Heart Bar-->
+            {{message['date'] | date:'EEEE MMM dd, yyyy'}} 
+            <img ng-src= "{{message['rating']>4 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}"/>  
+            <img ng-src= "{{message['rating']>3 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}")/> 
+            <img ng-src= "{{message['rating']>2 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}")/>
+            <img ng-src= "{{message['rating']>1 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}")/>
+            <img ng-src= "{{message['rating']>0 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}")/>
+          </h4>
+
+
+          <span class="rating"><h4>Rating: {{message['rating']}}/5</h4></span><br>
           {{message['text']}}
-          {{message['phone']}}
           <!--Leave this above line in for debugging purposes only-->
         </div>
     </div>

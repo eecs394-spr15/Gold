@@ -32,14 +32,14 @@
     <button class="button button-clear button-stable label-button1">Set mood lower bound: {{searchByMoodRatingLowerBound}}</button>
     <div class="card range rating-upper-bound">
         <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
-        <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingLowerBound">
+        <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingLowerBound" ng-change="changeLowerBound()">
         <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
     </div>
 
     <button class="button button-clear button-stable label-button2">Set mood upper bound: {{searchByMoodRatingUpperBound}}</button>
     <div class="card range rating-lower-bound" >
         <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
-        <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingUpperBound">
+        <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingUpperBound" ng-change="changeUpperBound()">
         <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
     </div>
   </div>

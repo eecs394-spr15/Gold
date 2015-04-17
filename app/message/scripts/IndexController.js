@@ -18,6 +18,17 @@ angular
       && (element.rating>=$scope.searchByMoodRatingLowerBound) && (element.rating<=$scope.searchByMoodRatingUpperBound ) ;
     };
 
+    $scope.changeLowerBound =function(){
+      if($scope.searchByMoodRatingLowerBound>$scope.searchByMoodRatingUpperBound ){
+        $scope.searchByMoodRatingUpperBound = $scope.searchByMoodRatingLowerBound;
+      }   
+    }
+    $scope.changeUpperBound =function(){
+      if($scope.searchByMoodRatingLowerBound>$scope.searchByMoodRatingUpperBound ){
+         $scope.searchByMoodRatingLowerBound=$scope.searchByMoodRatingUpperBound ;
+      }   
+    }
+
     Message.all().whenChanged( function (messages) {
         $scope.$apply( function () {
           $scope.messages = messages;

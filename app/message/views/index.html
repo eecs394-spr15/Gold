@@ -63,7 +63,7 @@
     </div>
 
     <!-- ng-reapeat list part -->
-    <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in myMessages | orderBy: '-date'|filter: filterFunction">
+    <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in filteredMyMessages = (myMessages | orderBy: '-date'|filter: filterFunction)">
       <div class="card" ng-hide="myMessages.length == 0">
         <div class="item item-text-wrap">
 
@@ -81,11 +81,16 @@
           <!--Leave this above line in for debugging purposes only-->
         </div>
 
-    </div>
-      </super-navigate>
-    <h4 ng-show="myMessages.length == 0" class="assertive padding">
-      No messages found. Text 612-255-1628 to get started!
-    </h4>
+      </div>
+    </super-navigate>
+
+      <h4 ng-hide="filteredMyMessages.length" class="assertive padding" align="center">
+          There is no result!
+      </h4>
+
+      <h4 ng-show="myMessages.length == 0" class="assertive padding">
+          No messages found. Text 612-255-1628 to get started!
+      </h4>
 
     <!--<super-modal-show location="message#new">
       <button class="button button-full button-positive">

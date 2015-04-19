@@ -12,18 +12,18 @@
   <div class="list list-inset">
     <label class="item item-input">
       <i class="icon super-search placeholder-icon"></i>
-        <input type="search" placeholder="Search" ng-model="keyword" class="searchbar">
+        <input type="search" placeholder="Search for keywords" ng-model="keyword" class="searchbar">
     </label>
   </div>
 <!-- the 3 Search Buttons for Search types -->
 <div class= "search-button-div">
-  <button class="button button-clear button-positive search-button" ng-style = "underline(collapsed_search_mood)" ng-model="collapsed_search_mood" ng-click="collapsed_search_mood=!collapsed_search_mood">
-    Search Mood
+  <button class="button button-outline button-balanced search-button" ng-style = "underline(collapsed_search_mood)" ng-model="collapsed_search_mood" ng-click="collapsed_search_mood=!collapsed_search_mood">
+    Filter Mood
   </button>
-  <button class="button button-clear button-calm search-button" ng-style = "underline(collapsed_search_date)" ng-model="collapsed_search_date" ng-click="collapsed_search_date=!collapsed_search_date">
-    Search Date
+  <button class="button button-outline button-balanced search-button" ng-style = "underline(collapsed_search_date)" ng-model="collapsed_search_date" ng-click="collapsed_search_date=!collapsed_search_date">
+    Filter Date
   </button>
-  <button class="button button-clear button-stable search-button-underlined" ng-style = "underline(!collapsed_welcome_info)" ng-model="collapsed_welcome_info" ng-click="collapsed_welcome_info=!collapsed_welcome_info">
+  <button class="button button-outline button-balanced search-button" ng-style = "underline(!collapsed_welcome_info)" ng-model="collapsed_welcome_info" ng-click="collapsed_welcome_info=!collapsed_welcome_info">
     Welcome Info
   </button>
 </div>

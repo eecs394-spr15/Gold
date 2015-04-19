@@ -38,11 +38,9 @@ angular
         }
       }
       $scope.underline = function(value){
-        if(value == true) return {"text-decoration":"underline"};
-        else return {"text-decoration":"none"};
+        if(value == true) return {"background-color":"#25c725","color":"#fff"};
+        else return {"background-color":"#fff"};
       }
-
-
 
 
 

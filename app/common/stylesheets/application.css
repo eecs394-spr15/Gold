@@ -27,7 +27,7 @@
 }
 .rating-lower-bound {
 	margin-top: -2px;
-	height: 35px;
+	height: 40px;
 }
 
 /*used for heart images*/
@@ -61,17 +61,61 @@ img{
 }
 .search-button{
 	margin-top:-10px;
-	margin-bottom:-5px}
+	margin-bottom:-5px;
+}
+.search-button-underlined{
+	margin-top:-10px;
+	margin-bottom:-5px;
+	text-decoration: underline;
+}
+
 
 .label-button1{
 	margin-left: 5px;
 	margin-top: 0px;
-	margin-bottom:-10px;
-}
-.label-button2{
-	margin-left: 5px;
-	margin-top:-15px;
-	margin-bottom:-10px;
+	margin-bottom:-5px;
 }
 
+.label-button2{
+	margin-left: 5px;
+	margin-top: 0px;
+	margin-bottom:-5px;
+}
+.date-pickers{
+	display: inline;
+}
+.date-start-input{
+	width: 130px;
+	float:left;
+	line-height: 30px!important;
+	text-align: left;
+	margin-bottom: 5px;
+	margin-bottom: 10px;
+	border:black solid 1px !important;
+}
+.date-end-input{
+	width: 130px;
+	float:right;
+	line-height: 30px!important;
+	text-align: left;
+	margin-bottom: 5px;
+	margin-bottom: 10px;
+	border:black solid 1px !important;
+
+}
+.label-start{
+	margin-top: -10px;
+	width: 46%;
+	float: left;
+	margin: 5px;
+}
+.label-end{
+	margin-top: -10px;
+	width: 38%;
+	float:right;
+	margin:5px;
+}
+.data-pickers{
+	vertical-align: middle;
+}
 

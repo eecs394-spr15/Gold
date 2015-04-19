@@ -1,4 +1,5 @@
 <div ng-controller="IndexController">
+  <!-- Navigation -->
   <super-navbar>
     <super-navbar-title>
       Koala
@@ -7,53 +8,64 @@
 
   <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
   <div ng-hide="showSpinner">
-
+  <!-- Search Bar-->
   <div class="list list-inset">
-  <label class="item item-input">
-    <i class="icon super-search placeholder-icon"></i>
-      <input type="search" placeholder="Search" ng-model="keyword" class="searchbar">
-
-  </label>
-</div>
-
+    <label class="item item-input">
+      <i class="icon super-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model="keyword" class="searchbar">
+    </label>
+  </div>
+<!-- the 3 Search Buttons for Search types -->
 <div class= "search-button-div">
-
-  <button class="button button-clear button-positive search-button" ng-model="collapsed_search_mood" ng-click="collapsed_search_mood=!collapsed_search_mood">
+  <button class="button button-clear button-positive search-button" ng-style = "underline(collapsed_search_mood)" ng-model="collapsed_search_mood" ng-click="collapsed_search_mood=!collapsed_search_mood">
     Search Mood
   </button>
-  <button class="button button-clear button-calm search-button">
+  <button class="button button-clear button-calm search-button" ng-style = "underline(collapsed_search_date)" ng-model="collapsed_search_date" ng-click="collapsed_search_date=!collapsed_search_date">
     Search Date
   </button>
-  <button class="button button-clear button-stable search-button" ng-model="collapsed_welcome_info" ng-click="collapsed_welcome_info=!collapsed_welcome_info">
+  <button class="button button-clear button-stable search-button-underlined" ng-style = "underline(!collapsed_welcome_info)" ng-model="collapsed_welcome_info" ng-click="collapsed_welcome_info=!collapsed_welcome_info">
     Welcome Info
   </button>
 </div>
+    <!-- collapsing div for mood rating range-->
     <div class = "collapsing div" ng-show="collapsed_search_mood">
-    <button class="button button-clear button-stable label-button1">Set mood lower bound: {{searchByMoodRatingLowerBound}}</button>
-    <div class="card range rating-upper-bound">
-        <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
-        <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingLowerBound" ng-change="changeLowerBound()">
-        <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
+      <button class="button button-clear button-stable label-button1">Set mood lower bound: {{searchByMoodRatingLowerBound}}</button>
+      <div class="card range rating-upper-bound">
+          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
+          <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingLowerBound" ng-change="changeLowerBound()">
+          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
+      </div>
+      <button class="button button-clear button-stable label-button2">Set mood upper bound: {{searchByMoodRatingUpperBound}}</button>
+      <div class="card range rating-lower-bound" >
+          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
+          <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingUpperBound" ng-change="changeUpperBound()">
+          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
+      </div>
     </div>
 
-    <button class="button button-clear button-stable label-button2">Set mood upper bound: {{searchByMoodRatingUpperBound}}</button>
-    <div class="card range rating-lower-bound" >
-        <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
-        <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingUpperBound" ng-change="changeUpperBound()">
-        <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
+    <!-- collapsing div for date pickers -->
+    <div class="card data-pickers" ng-show ="collapsed_search_date">
+        <div class="item item-text-wrap data-pickers">
+          <p class = "label-start">Date starts by</p>
+          <p class = "label-end">Date ends by</p>          
+          <input type="date" ng-model = "searchByDateLowerBound" class="date-start-input" align="middle">
+          <input type="date" ng-model = "searchByDateUpperBound" class="date-end-input" align="middle">
+
+        </div>
     </div>
-  </div>
-   <div class="card" ng-show ="!collapsed_welcome_info">
+
+    <!-- collapsing div for welcome info -->
+    <div class="card" ng-show ="!collapsed_welcome_info">
         <div class="item item-text-wrap">
           <h1>Welcome to Koala!</h1>
           <p>Koala is a private place for you to log your daily thoughts and life highlights. Simply text your entries to 612-255-1628 daily, and we'll store them all safely here for you.</p>
         </div>
     </div>
 
-      <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in myMessages | orderBy: '-date'|filter: filterFunction">
+    <!-- ng-reapeat list part -->
+    <super-navigate location="message#show" data-params-id="{{message}}" ng-repeat="message in myMessages | orderBy: '-date'|filter: filterFunction">
       <div class="card" ng-hide="myMessages.length == 0">
         <div class="item item-text-wrap">
-
 
           <h4 class="message-date">                           <!-- Heart Bar-->
             {{message['date'] | date:'EEEE MMM dd, yyyy'}} 
@@ -64,13 +76,14 @@
             <img ng-src= "{{message['rating']>0 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}")/>
           </h4>
 
-
           <span class="rating"><h4>Rating: {{message['rating']}}/5</h4></span><br>
           {{message['text']}}
           <!--Leave this above line in for debugging purposes only-->
         </div>
-    </div>
-      </super-navigate>
+      </div>
+    </super-navigate>
+
+     <!-- No message alert -->
     <h4 ng-show="messages.length == 0" class="assertive padding">
       No messages found. Text 612-255-1628 to get started!
     </h4>
@@ -80,5 +93,6 @@
         Create a new message
       </button>
     </super-modal-show>-->
+ 
   </div>
 </div>

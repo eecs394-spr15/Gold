@@ -16,16 +16,12 @@ angular
     $scope.bool = false;
     $scope.boollist =[];
     $scope.filterFunction = function(element) {
-        var messageDate = new Date(element.date);
-        messageDate.getUTCFullYear(); //1995-12-17
-                                      //2005-4-20
-                                      //2005-5-20
-                                      $scope.boollist.push(messageDate.getTime()>=$scope.searchByDateLowerBound.getTime() && messageDate.getTime()<=$scope.searchByDateUpperBound.getTime());
+      var messageDate = new Date(element.date);
+      
       return  ((element.date.match($scope.keyword) ? true : false)
       ||      (element.text.toLowerCase().match($scope.keyword.toLowerCase()) ? true : false))
       && (element.rating>=$scope.searchByMoodRatingLowerBound) && (element.rating<=$scope.searchByMoodRatingUpperBound )
       && messageDate.getTime()>=$scope.searchByDateLowerBound.getTime() && messageDate.getTime()<=$scope.searchByDateUpperBound.getTime();
-      //&& (messageDate.getTime()>=$scope.searchByDateLowerBound.getTime()) && (messageDate.getTime()<=$scope.searchByDatUpperBound.getTime());
     }
 
     $scope.changeLowerBound =function(){

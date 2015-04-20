@@ -12,6 +12,7 @@ angular
 
       $scope.searchByDateLowerBound = new Date('2015-01-01T03:24:00');
       $scope.searchByDateUpperBound = new Date();
+      $scope.searchByDateUpperBound.setUTCFullYear(2016);
 
       $scope.bool = false;
       $scope.boolList =[];

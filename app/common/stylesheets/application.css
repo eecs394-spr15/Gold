@@ -40,6 +40,15 @@ img{
 
 }
 
+.showHeart{
+	width:30px;
+	height: 22px;
+	float: right;
+	margin-top: 6px;
+	vertical-align: text-bottom;
+
+}
+
 /*below are filters used for image manipulation.*/
 .saturate {-webkit-filter: saturate(3);}
 .grayscale {-webkit-filter:  opacity(30%) hue-rotate(200deg);;}

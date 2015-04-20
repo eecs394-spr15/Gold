@@ -10,7 +10,7 @@ module.exports =
       location: "message#index"
     }
     {
-      title: "Settings"
+      title: "About"
       id: "settings"
       location: "example#settings"
     }

@@ -17,7 +17,7 @@ angular
           localStorage.setItem("user-phone", $scope.text);
           
           $scope.phoneNumber = localStorage.getItem("user-phone");
-          $scope.urltest = 'https://2a80d406.ngrok.com/users/new?phone='+$scope.phoneNumber.toString();
+          $scope.urltest = 'https://warm-ravine-7743.herokuapp.com/users/new?phone='+$scope.phoneNumber.toString();
             $http({
               method:"POST",
               url:$scope.urltest,

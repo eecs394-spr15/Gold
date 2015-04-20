@@ -17,14 +17,14 @@
   </div>
 <!-- the 3 Search Buttons for Search types -->
 <div class= "search-button-div">
-  <button class="button button-outline button-balanced search-button" ng-style = "underline(collapsed_search_mood)" ng-model="collapsed_search_mood" ng-click="collapsed_search_mood=!collapsed_search_mood">
-    Filter Mood
+  <button class="button button-outline button-balanced search-button custom-button" ng-style = "underline(collapsed_search_mood)" ng-model="collapsed_search_mood" ng-click="collapsed_search_mood=!collapsed_search_mood">
+    <span class="button-font">Filter Mood</span>
   </button>
-  <button class="button button-outline button-balanced search-button" ng-style = "underline(collapsed_search_date)" ng-model="collapsed_search_date" ng-click="collapsed_search_date=!collapsed_search_date">
-    Filter Date
+  <button class="button button-outline button-balanced search-button custom-button" ng-style = "underline(collapsed_search_date)" ng-model="collapsed_search_date" ng-click="collapsed_search_date=!collapsed_search_date">
+     <span class="button-font">Filter Date</span>
   </button>
-  <button class="button button-outline button-balanced search-button" ng-style = "underline(!collapsed_welcome_info)" ng-model="collapsed_welcome_info" ng-click="collapsed_welcome_info=!collapsed_welcome_info">
-    Welcome Info
+  <button class="button button-outline button-balanced search-button custom-button" ng-style = "underline(!collapsed_welcome_info)" ng-model="collapsed_welcome_info" ng-click="collapsed_welcome_info=!collapsed_welcome_info">
+     <span class="button-font">About</span>
   </button>
 </div>
     <!-- collapsing div for mood rating range-->
@@ -85,7 +85,7 @@
     </super-navigate>
 
       <h4 ng-hide="filteredMyMessages.length" class="assertive padding" align="center">
-          There is no result!
+          There are no results for your search :(
       </h4>
 
       <h4 ng-show="myMessages.length == 0" class="assertive padding">

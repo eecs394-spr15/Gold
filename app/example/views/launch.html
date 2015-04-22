@@ -11,7 +11,7 @@
 <div>
  <form ng-submit="submit()" ng-controller="LaunchController">
   <label class="item item-input">
-    <input type="number" ng-model="text" name="text" placeholder="Phone number (xxxyyyxxxx)">
+    <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="text" name="text" placeholder="Phone number (xxxyyyxxxx)">
   </label>
   <br>
   <input onclick="supersonic.ui.initialView.dismiss()" class="button button-block button-balanced" type="submit" id="submit" value="Submit" />

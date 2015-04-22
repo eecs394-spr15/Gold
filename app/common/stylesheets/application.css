@@ -136,3 +136,9 @@ img{
 	font-size: .75em;
 }
 
+.bigMessage {
+
+	font-family: ‘Courier New’, Courier, monospace;
+	size: 16;
+}
+

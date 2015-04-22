@@ -2,7 +2,7 @@ angular
     .module('message')
     .controller("IndexController", function ($scope, Message, supersonic) {
       $scope.messages = null;
-      $scope.showSpinner = false;
+      $scope.showSpinner = true;
       $scope.myMessages = [];
       $scope.phoneNumber = localStorage.getItem("user-phone");
       $scope.keyword = "";

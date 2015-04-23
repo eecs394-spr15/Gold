@@ -6,12 +6,12 @@
 
 <div class="padding">
 
-  <p>Please enter your phone number below to get started.</p>
+  <p>Please enter your <strong>Phone Number</strong> below to get started.</p>
 
 <div>
  <form ng-submit="submit()" ng-controller="LaunchController">
   <label class="item item-input">
-    <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="text" name="text" placeholder="Phone number (xxxyyyxxxx)">
+    <input type="text" pattern="\d*" onkeypress='validate()' ng-model="text" name="text" placeholder="Phone number:">
   </label>
   <br>
   <input onclick="supersonic.ui.initialView.dismiss()" class="button button-block button-balanced" type="submit" id="submit" value="Submit" />

@@ -142,3 +142,9 @@ img{
 	size: 16;
 }
 
+.bamboo {
+	width: 100%;
+	height: auto;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}

@@ -63,5 +63,6 @@ angular
       $scope.fullHeartURL = "http://i60.tinypic.com/10crg5k.png";
       $scope.halfHeartURL = "http://i57.tinypic.com/23vyzk5.png";
       $scope.emptyHeartURL ="http://i58.tinypic.com/2akg4mv.png";
+        $scope.bambooURL = "http://i61.tinypic.com/2j0b82c.png";
   });
 

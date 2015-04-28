@@ -31,7 +31,7 @@
 }
 
 /*used for heart images*/
-img{
+.heart{
 	width:15px;
 	height: 11px;
 	float: right;
@@ -44,9 +44,7 @@ img{
 	width:30px;
 	height: 22px;
 	float: right;
-	margin-top: 6px;
-	vertical-align: text-bottom;
-
+	margin-top: -3% !important;
 }
 
 /*below are filters used for image manipulation.*/
@@ -66,11 +64,12 @@ img{
 }
 
 .search-button-div{
-	margin-left: 15px;
+	margin-left: 3%;
 }
 .search-button{
 	margin-top:-10px;
 	margin-bottom:-5px;
+	margin-right: 1%;
 }
 .search-button-underlined{
 	margin-top:-10px;
@@ -129,7 +128,7 @@ img{
 }
 
 .custom-button {
-	width: 30%;
+	width: 31%;
 }
 
 .button-font {
@@ -147,4 +146,11 @@ img{
 	height: auto;
 	margin-top: 20px;
 	margin-bottom: 3px;
+}
+
+.Koala-initial-image{
+	margin-left:10%;
+	margin-top: 5%;
+	width: 80%;
+	height: 80%;
 }

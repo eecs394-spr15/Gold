@@ -31,15 +31,15 @@
     <div class = "collapsing div" ng-show="collapsed_search_mood">
       <button class="button button-clear button-stable label-button1">Set mood lower bound: {{searchByMoodRatingLowerBound}}</button>
       <div class="card range rating-upper-bound">
-          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
+          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true,heart:'true'}"/>
           <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingLowerBound" ng-change="changeLowerBound()">
-          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
+          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true,heart:'true'}"/>
       </div>
       <button class="button button-clear button-stable label-button2">Set mood upper bound: {{searchByMoodRatingUpperBound}}</button>
       <div class="card range rating-lower-bound" >
-          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true}"/>
+          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':true,'rating-slide-bar':true ,heart:'true'}"/>
           <input type="range" name="volume" min="0" max="5" value="1" ng-model = "searchByMoodRatingUpperBound" ng-change="changeUpperBound()">
-          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true}"/>
+          <img ng-src= "{{fullHeartURL}}"  ng-class="{'grayscale':false, 'rating-slide-bar':true,heart:'true'}"/>
       </div>
     </div>
 
@@ -68,11 +68,11 @@
         <div class="item item-text-wrap">
           <h4 class="message-date">                           <!-- Heart Bar-->
             {{message['date'] | date:'EEEE MMM dd, yyyy'}} 
-            <img ng-src= "{{message['rating']>4 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}"/>  
-            <img ng-src= "{{message['rating']>3 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}")/> 
-            <img ng-src= "{{message['rating']>2 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}")/>
-            <img ng-src= "{{message['rating']>1 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}")/>
-            <img ng-src= "{{message['rating']>0 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3}")/>
+            <img ng-src= "{{message['rating']>4 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3,heart:'true'}"/>  
+            <img ng-src= "{{message['rating']>3 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3,heart:'true'}")/> 
+            <img ng-src= "{{message['rating']>2 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3,heart:'true'}")/>
+            <img ng-src= "{{message['rating']>1 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3,heart:'true'}")/>
+            <img ng-src= "{{message['rating']>0 ?fullHeartURL:emptyHeartURL}}"  ng-class="{'grayscale':message['rating']<3,heart:'true'}")/>
           </h4>
 
           <span class="rating"><h4>Rating: {{message['rating']}}/5</h4></span><br>

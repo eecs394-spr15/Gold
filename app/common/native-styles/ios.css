@@ -39,7 +39,7 @@ tab-bar-item#settings {
 }
 
 tab-bar-item#index{
-  background-image: url(icons/home.svg);
+  background-image: url(icons/social-twitch-outline.svg);
 }
 
 tab-bar-item#internet {

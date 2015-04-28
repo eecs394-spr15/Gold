@@ -6,9 +6,9 @@ angular
     $scope.list = [];
     //$http.post("2a80d406.ngrok.com/users/new?phone=8189836911"});
     $scope.text = "";
-  /*  if(localStorage.getItem("user-phone")) {
+    if(localStorage.getItem("user-phone")) {
 		supersonic.ui.initialView.dismiss();
-	}; *///change later
+	}; //change later
 
     $scope.submit = function() {
         if ($scope.text) {
